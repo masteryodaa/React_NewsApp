@@ -23,7 +23,6 @@ export class App extends Component {
     })
   }
 
-    // apiKey = '07b462066988458d93c6fd081870718f';
     apiKey = process.env.REACT_APP_API_KEY;
 
 
@@ -58,6 +57,7 @@ export class App extends Component {
 
           <LoadingBar
             color='#f11946'
+            height={3}
             progress={this.state.progress}
             // onLoaderFinished={() => setProgress(0)}
           />
