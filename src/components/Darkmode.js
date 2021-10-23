@@ -15,9 +15,9 @@ export class Darkmode extends Component {
                         }`}
                     htmlFor="flexSwitchCheckChecked"
                 >
-                    {this.props.mode === "light"
-                        ? "Enable Dark Mode"
-                        : "Disable Dark Mode"}
+                    {this.props.mode === "dark"
+                        ? "Enable Light Mode"
+                        : "Enable Dark Mode"}
                 </label>
             </div>
         );

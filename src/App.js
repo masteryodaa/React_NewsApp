@@ -5,12 +5,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
 import LoadingBar from 'react-top-loading-bar'
 
+
+document.body.style.backgroundColor='#212429';
+
 export class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      mode: "light",
+      mode: "dark",
       progress:0
     };
 
