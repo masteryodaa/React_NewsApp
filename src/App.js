@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import News from "./components/News";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
-// import LoadingBar from 'react-top-loading-bar'
+import LoadingBar from 'react-top-loading-bar'
 
 export class App extends Component {
   constructor() {
@@ -56,11 +56,11 @@ export class App extends Component {
         <div className={`bg-${this.state.mode}`}>
 
 
-          {/* <LoadingBar
+          <LoadingBar
             color='#f11946'
             progress={this.state.progress}
             // onLoaderFinished={() => setProgress(0)}
-          /> */}
+          />
 
           <Navbar title={this.title} />
 
