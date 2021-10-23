@@ -124,7 +124,7 @@ export class News extends Component {
 
 
         </div>
-        <Pagination nextPg={this.nextPg} prevPg={this.prevPg} />
+        <Pagination nextPg={this.nextPg} prevPg={this.prevPg} page={this.state.page}/>
       </div>
     );
   }
