@@ -11,3 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.logo:link {
+  color: black;
+}
+
+/* visited link */
+.logo:visited {
+  color: black;
+}
+
+/* mouse over link */
+.logo:hover {
+  color: black;
+}
+
+/* selected link */
+.logo:active {
+  color: black;
+}
+
+.header{
+  /* text-transform: lowercase; */
+  text-transform: capitalize;
+}
