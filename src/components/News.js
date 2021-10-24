@@ -28,7 +28,9 @@ export class News extends Component {
     let url = await fetch(
       `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.page}`
     );
-    this.props.setProgress(30);
+
+
+    this.props.setProgress(35);
 
     let newdata = await url.json();
     this.props.setProgress(50);
@@ -47,25 +49,6 @@ export class News extends Component {
     console.log("componentDidMount");
     this.update();
   }
-
-  // fetchMoreData = async () => {
-  //   this.setState({
-  //     page: this.state.page + 1,
-  //     loading: true,
-  //   });
-
-  //   let url = await fetch(
-  //     `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&pageSize=${this.props.pageSize}&page=${this.state.page}`
-  //   );
-
-  //   let newdata = await url.json();
-
-  //   this.setState({
-  //     data: this.state.data.concat(newdata.articles),
-  //     loading: false,
-  //     total: newdata.totalResults,
-  //   });
-  // };
 
   nextPg = () => {
     this.setState({
@@ -112,19 +95,20 @@ export class News extends Component {
                   url={article.url}
                   source={article.source.name}
                 />
+
               </div>
 
 
             );
           })
-          
+
           }
           {/* </InfiniteScroll> */}
 
 
 
         </div>
-        <Pagination nextPg={this.nextPg} prevPg={this.prevPg} page={this.state.page}/>
+        <Pagination nextPg={this.nextPg} prevPg={this.prevPg} page={this.state.page} />
       </div>
     );
   }
@@ -133,7 +117,7 @@ export class News extends Component {
 News.defaultProps = {
   pageSize: 6,
   country: "",
-  category: "general",
+  category: "",
   apiKey: process.env.REACT_APP_API_KEY
 };
 

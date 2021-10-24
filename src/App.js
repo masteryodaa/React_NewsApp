@@ -6,18 +6,20 @@ import Header from "./components/Header";
 import LoadingBar from 'react-top-loading-bar'
 
 
-document.body.style.backgroundColor='#212429';
 
 export class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      mode: "dark",
+      mode: localStorage.getItem('mode')?localStorage.getItem('mode'):'dark',
       progress:0
     };
 
+    document.body.style.backgroundColor=this.state.mode==='dark'?'#212429':'white';
+
   }
+
 
 
   setProgress = (progress)=>{
@@ -26,21 +28,26 @@ export class App extends Component {
     })
   }
 
-    apiKey = process.env.REACT_APP_API_KEY;
+    // apiKey = process.env.REACT_APP_API_KEY;
+    apiKey = '07b462066988458d93c6fd081870718f';
+    // apiKey = 'pub_1913171055e7137a1d464be8e01d32bee9f5'
 
 
   darkmode = () => {
 
     if (this.state.mode === "light") {
       this.setState({
-        mode: "dark",
+        mode: 'dark',
       });
+      localStorage.setItem('mode','dark')
       document.body.style.backgroundColor = '#212429';
     }
+
     else {
       this.setState({
-        mode: "light",
+        mode: 'light',
       });
+      localStorage.setItem('mode','light')
       document.body.style.backgroundColor = 'white';
     }
   }
@@ -72,27 +79,27 @@ export class App extends Component {
           <Switch>
 
             <Route exact path='/'>
-              <News apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='' />
+              <News  apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='general' />
             </Route>
 
             <Route key='technology' exact path='/technology'>
-              <News apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='technology' />
+              <News  apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='technology' />
             </Route>
 
             <Route key='business' exact path="/business">
-              <News apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='business' />
+              <News  apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='business' />
             </Route>
 
             <Route key='sports' exact path="/sports">
-              <News apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='sports' />
+              <News  apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='sports' />
             </Route>
 
             <Route key='entertainment' exact path="/entertainment">
-              <News apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='entertainment' />
+              <News  apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='entertainment' />
             </Route>
 
             <Route key='science' exact path="/science">
-              <News apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='science' />
+              <News  apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='science' />
             </Route>
 
           </Switch>

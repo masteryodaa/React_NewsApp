@@ -15,7 +15,8 @@ export class Newsitem extends Component {
                     <span style={{position:"absolute",right:'0'}} className=" small badge rounded-pill bg-danger">
                         {this.props.source}
                     </span>
-                    <img style={{ height: '10em' }} src={this.props.imgsrc} className="card-img-top" alt="..." />
+
+                    <img style={{ height: '10em' }} src={this.props.imgsrc === null || undefined? 'https://e3.365dm.com/21/09/768x432/skynews-breaking-news_5513713.jpg?20210915162827': this.props.imgsrc} className="card-img-top" alt="unknown img" />
 
                     <div className="card-body">
                         <h5 className="card-title">{!this.props.title ? '' : this.props.title.slice(0, 40)}...</h5>
