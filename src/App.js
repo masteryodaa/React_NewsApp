@@ -82,6 +82,10 @@ export class App extends Component {
               <News  apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='general' />
             </Route>
 
+            <Route key='politics' exact path='/politics'>
+              <News  apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='politics' />
+            </Route>
+
             <Route key='technology' exact path='/technology'>
               <News  apiKey={this.apiKey} setProgress={this.setProgress} country='in' category='technology' />
             </Route>
