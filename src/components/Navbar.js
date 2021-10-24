@@ -5,7 +5,7 @@ export class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-light bg-warning">
+            <nav className="navbar navbar-expand-lg navbar-light bg-warning sticky-top">
                 <div className="container-fluid">
                     <Link onClick={this.props.title} to="/" style={{ textDecoration: 'none' }} className='logo'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-yin-yang mx-2" viewBox="0 0 16 16">

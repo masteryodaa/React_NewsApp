@@ -56,6 +56,11 @@ export class News extends Component {
     })
 
     this.update();
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
   prevPg = () => {
@@ -64,6 +69,11 @@ export class News extends Component {
     })
 
     this.update();
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
 
